@@ -4,11 +4,11 @@
 
 @layer base {
   html {
-    @apply bg-zinc-800;
+    @apply bg-zinc-800 text-zinc-50;
   }
 
   body {
-    @apply bg-zinc-800 text-zinc-50 flex min-h-screen flex-col max-w-screen-2xl mx-auto;
+    @apply bg-zinc-800 text-zinc-50 flex  min-h-screen flex-col antialiased px-8 py-5 gap-5;
     -webkit-tap-highlight-color: transparent;
   }
 }
