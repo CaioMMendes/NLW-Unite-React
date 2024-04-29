@@ -6,10 +6,17 @@ type ButtonTypes = {
   Icon: React.ElementType
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-const IconButton = ({ className, variant, Icon, ...props }: ButtonTypes) => {
+const IconButton = ({
+  className,
+  variant,
+  Icon,
+  disabled,
+  ...props
+}: ButtonTypes) => {
   return (
     <button
       className={cn(
+        disabled && "opacity-50",
         variant === "table" &&
           "bg-black/20 border border-white/10 rounded-md p-1.5",
 
