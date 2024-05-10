@@ -50,6 +50,7 @@ const AttendeeList = () => {
       setPage(1)
     }
     if (url.searchParams.has("search")) {
+      console.log(url.searchParams.get("search"))
       setSearch(url.searchParams.get("search") ?? "")
     } else {
       setSearch("")
@@ -116,7 +117,9 @@ const AttendeeList = () => {
     setCurrentSearch(e.target.value)
   }
   function handleUpdateDebouncePage() {
-    if (!firstRender) {
+    console.log("não entrou")
+    if (!firstRender.current) {
+      console.log("entrou")
       setCurrentPage(1)
     }
   }
@@ -129,6 +132,7 @@ const AttendeeList = () => {
           placeholder="Buscar participante..."
           type="text"
           className="w-72 outline-none focus:ring-none focus:outline-none"
+          value={search}
           onChange={handleSearch}
         />
       </div>
